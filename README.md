@@ -12,23 +12,30 @@ A private React UI component library built with shadcn/ui, Tailwind CSS, and Typ
 
 ## Installation
 
-Since this is a private library, link it locally in your consuming project:
+Configure GitHub Packages for the `@8th` scope in the consuming project's `.npmrc`:
 
-In your app's package.json, add:
+```text
+@8th:registry=https://npm.pkg.github.com/
+```
 
-{
-  "dependencies": {
-    "@8th/ui": "file:../8-ui"
-  }
-}
+Authenticate with a GitHub personal access token that has `read:packages`:
 
-Then run:
+```bash
+npm login --registry=https://npm.pkg.github.com/ --scope=@8th
+```
 
-pnpm install
+This stores the credential in your user-level npm configuration, not in the repository. Then install the package:
 
-Import components:
+```bash
+pnpm add @8th/ui
+```
 
+Import components and the shared stylesheet:
+
+```tsx
 import { Button } from "@8th/ui"
+import "@8th/ui/styles"
+```
 import "@8th/ui/styles"
 
 ## Development
@@ -68,7 +75,7 @@ pnpm dlx shadcn@latest add button
 
 1. Add a shadcn component: pnpm dlx shadcn@latest add button
 2. Rebuild: pnpm build
-3. Update your consuming app: cd ../8-web && pnpm install
+3. Release a new package version, then update your consuming app with `pnpm update @8th/ui`
 
 ## Customizing Components
 
