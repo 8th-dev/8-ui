@@ -50,6 +50,7 @@
 	},
 	"scripts": {
 		"build": "tsup --clean && tailwindcss -i src/styles/globals.css -o dist/styles/globals.css && copyfiles -u 4 \"node_modules/@fontsource/jetbrains-mono/files/*\" dist/styles/files && copyfiles -u 2 src/styles/globals.css.d.ts dist/styles && tsc --emitDeclarationOnly",
+		"prepare": "pnpm build",
 		"dev": "concurrently \"pnpm dev:js\" \"pnpm dev:css\" \"pnpm dev:types\"",
 		"dev:js": "tsup --watch",
 		"dev:css": "tailwindcss -i src/styles/globals.css -o dist/styles/globals.css --watch",
