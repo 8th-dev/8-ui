@@ -4,6 +4,14 @@
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/src/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/src/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./styles": "./src/styles/globals.css"
+	},
 	"devDependencies": {
 		"@shadcn/ui": "^0.0.4",
 		"@types/react": "^19.2.18",
