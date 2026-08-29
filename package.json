@@ -60,5 +60,6 @@
 		"dev:js": "tsup --watch",
 		"dev:css": "tailwindcss -i src/styles/globals.css -o dist/styles/globals.css --watch",
 		"dev:types": "tsc --emitDeclarationOnly --watch"
-	}
+	},
+	"packageManager": "pnpm@9.12.2"
 }
