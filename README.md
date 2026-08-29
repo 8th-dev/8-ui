@@ -1,4 +1,4 @@
-# @8th/ui
+# @8th-dev/ui
 
 A private React UI component library built with shadcn/ui, Tailwind CSS, and TypeScript.
 
@@ -12,31 +12,30 @@ A private React UI component library built with shadcn/ui, Tailwind CSS, and Typ
 
 ## Installation
 
-Configure GitHub Packages for the `@8th` scope in the consuming project's `.npmrc`:
+Configure GitHub Packages for the `@8th-dev` scope in the consuming project's `.npmrc`:
 
 ```text
-@8th:registry=https://npm.pkg.github.com/
+@8th-dev:registry=https://npm.pkg.github.com/
 ```
 
 Authenticate with a GitHub personal access token that has `read:packages`:
 
 ```bash
-npm login --registry=https://npm.pkg.github.com/ --scope=@8th
+npm login --registry=https://npm.pkg.github.com/ --scope=@8th-dev
 ```
 
 This stores the credential in your user-level npm configuration, not in the repository. Then install the package:
 
 ```bash
-pnpm add @8th/ui
+pnpm add @8th-dev/ui
 ```
 
 Import components and the shared stylesheet:
 
 ```tsx
-import { Button } from "@8th/ui"
-import "@8th/ui/styles"
+import { Button } from "@8th-dev/ui"
+import "@8th-dev/ui/styles"
 ```
-import "@8th/ui/styles"
 
 ## Development
 
@@ -75,7 +74,7 @@ pnpm dlx shadcn@latest add button
 
 1. Add a shadcn component: pnpm dlx shadcn@latest add button
 2. Rebuild: pnpm build
-3. Release a new package version, then update your consuming app with `pnpm update @8th/ui`
+3. Release a new package version, then update your consuming app with `pnpm update @8th-dev/ui`
 
 ## Customizing Components
 
@@ -85,11 +84,11 @@ You own all component code. Modify src/components/ui/*.tsx freely.
 
 In your Next.js app layout:
 
-import "@8th/ui/styles"
+import "@8th-dev/ui/styles"
 
 In your pages:
 
-import { Button } from "@8th/ui"
+import { Button } from "@8th-dev/ui"
 
 export default function Home() {
   return <Button variant="outline">Click me</Button>
