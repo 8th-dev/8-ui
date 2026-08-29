@@ -32,7 +32,6 @@
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.7.0",
-		"@fontsource/jetbrains-mono": "^5.2.8",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-react": "^1.37.0",
@@ -49,7 +48,7 @@
 		}
 	},
 	"scripts": {
-		"build": "tsup --clean && tailwindcss -i src/styles/globals.css -o dist/styles/globals.css && copyfiles -u 4 \"node_modules/@fontsource/jetbrains-mono/files/*\" dist/styles/files && copyfiles -u 2 src/styles/globals.css.d.ts dist/styles && tsc --emitDeclarationOnly",
+		"build": "tsup --clean && tailwindcss -i src/styles/globals.css -o dist/styles/globals.css && copyfiles -u 2 src/styles/globals.css.d.ts dist/styles && tsc --emitDeclarationOnly",
 		"prepare": "pnpm build",
 		"dev": "concurrently \"pnpm dev:js\" \"pnpm dev:css\" \"pnpm dev:types\"",
 		"dev:js": "tsup --watch",
