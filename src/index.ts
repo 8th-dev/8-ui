@@ -1,7 +1,7 @@
 // src/index.ts
 
 // Export all components
-export * from '../components/ui/button'
+export * from './components/ui/button'
 
 // Add more components as you add them
 // export * from './components/ui/card'

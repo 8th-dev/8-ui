@@ -9,6 +9,7 @@
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "sourceMap": true,
+    "rootDir": "src",
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,

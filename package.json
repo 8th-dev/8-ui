@@ -3,20 +3,26 @@
 	"version": "0.1.0",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
-	"types": "dist/src/index.d.ts",
+	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/src/index.d.ts",
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		},
-		"./styles": "./src/styles/globals.css"
+		"./styles": {
+			"types": "./dist/styles/globals.css.d.ts",
+			"default": "./dist/styles/globals.css"
+		}
 	},
 	"devDependencies": {
 		"@shadcn/ui": "^0.0.4",
+		"@tailwindcss/cli": "^4.3.3",
 		"@types/react": "^19.2.18",
 		"@types/react-dom": "^19.2.5",
 		"autoprefixer": "^10.5.4",
+		"concurrently": "^10.0.5",
+		"copyfiles": "^2.4.1",
 		"postcss": "^8.5.26",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8",
@@ -26,6 +32,7 @@
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.7.0",
+		"@fontsource/jetbrains-mono": "^5.2.8",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-react": "^1.37.0",
@@ -42,7 +49,10 @@
 		}
 	},
 	"scripts": {
-		"build": "tsup && tsc --emitDeclarationOnly",
-		"dev": "tsup --watch"
+		"build": "tsup --clean && tailwindcss -i src/styles/globals.css -o dist/styles/globals.css && copyfiles -u 4 \"node_modules/@fontsource/jetbrains-mono/files/*\" dist/styles/files && copyfiles -u 2 src/styles/globals.css.d.ts dist/styles && tsc --emitDeclarationOnly",
+		"dev": "concurrently \"pnpm dev:js\" \"pnpm dev:css\" \"pnpm dev:types\"",
+		"dev:js": "tsup --watch",
+		"dev:css": "tailwindcss -i src/styles/globals.css -o dist/styles/globals.css --watch",
+		"dev:types": "tsc --emitDeclarationOnly --watch"
 	}
 }
