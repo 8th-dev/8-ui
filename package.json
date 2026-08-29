@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
+	"types": "dist/src/index.d.ts",
 	"devDependencies": {
 		"@shadcn/ui": "^0.0.4",
 		"@types/react": "^19.2.18",
@@ -32,5 +32,9 @@
 				"./src/*"
 			]
 		}
+	},
+	"scripts": {
+		"build": "tsup && tsc --emitDeclarationOnly",
+		"dev": "tsup --watch"
 	}
 }
