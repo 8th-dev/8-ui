@@ -1,6 +1,6 @@
 # @8th-dev/ui
 
-A private React UI component library built with shadcn/ui, Tailwind CSS, and TypeScript.
+A React UI component library built with shadcn/ui, Tailwind CSS, and TypeScript.
 
 ## Tech Stack
 
@@ -11,20 +11,6 @@ A private React UI component library built with shadcn/ui, Tailwind CSS, and Typ
 - tsup — Build tool
 
 ## Installation
-
-Configure GitHub Packages for the `@8th-dev` scope in the consuming project's `.npmrc`:
-
-```text
-@8th-dev:registry=https://npm.pkg.github.com/
-```
-
-Authenticate with a GitHub personal access token that has `read:packages`:
-
-```bash
-npm login --registry=https://npm.pkg.github.com/ --scope=@8th-dev
-```
-
-This stores the credential in your user-level npm configuration, not in the repository. Then install the package:
 
 ```bash
 pnpm add @8th-dev/ui
@@ -96,4 +82,4 @@ export default function Home() {
 
 ## License
 
-Private — for internal use only.
+MIT
