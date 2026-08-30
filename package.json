@@ -1,8 +1,9 @@
 {
 	"name": "@8th-dev/ui",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
 	},
 	"files": [
 		"dist"
