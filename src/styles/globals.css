@@ -133,7 +133,7 @@
     h4,
     h5,
     h6 {
-        @apply font-semibold text-foreground;
+        @apply font-semibold;
     }
 
     h1 {
@@ -152,8 +152,16 @@
         @apply text-xl leading-snug;
     }
 
+    h5 {
+        @apply text-lg leading-snug;
+    }
+
+    h6 {
+        @apply text-base leading-normal;
+    }
+
     p {
-        @apply leading-7 text-muted-foreground;
+        @apply leading-7;
     }
 
     a {

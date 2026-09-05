@@ -2,10 +2,10 @@
 
 // Export all components
 export * from './components/ui/button'
-
-// Add more components as you add them
-// export * from './components/ui/card'
-// export * from './components/ui/dialog'
+export * from './components/ui/input'
+export * from './components/ui/label'
+export * from './components/ui/separator'
+export * from './lib/utils'
 
 // Export styles (optional — consumer will import separately)
 // import './styles/globals.css'
