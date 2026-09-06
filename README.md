@@ -41,6 +41,33 @@ Add a shadcn component:
 
 pnpm dlx shadcn@latest add button
 
+## Publishing
+
+For a local release, update the version in `package.json`, then run:
+
+```bash
+npm login
+npm whoami
+pnpm install --frozen-lockfile
+pnpm build
+npm publish --access public
+```
+
+`npm whoami` should show an npm account with permission to publish the
+`@8th-dev/ui` package. npm does not allow publishing the same version twice.
+
+To publish from GitHub Actions instead, commit the version change and push a
+matching tag. For example, version `0.2.1` requires tag `v0.2.1`:
+
+```bash
+git tag v0.2.1
+git push origin v0.2.1
+```
+
+The repository's Actions secrets must include `NPM_TOKEN`, containing an npm
+access token with read and write permission for `@8th-dev/ui`. Logging in with
+`npm login` locally does not authenticate GitHub Actions.
+
 ## Project Structure
 
 8-ui/
